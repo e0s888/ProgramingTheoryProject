@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
     {
         Move();
     }
-    public virtual void Move() //public virtual void - has to be to be readed by zombie .cs to ovveride it
+    public virtual void Move() //ABSTRACTION , public virtual void - has to be to be readed by zombie .cs to ovveride it
     {
         //inaczej - enemyRb.AddForce((player.transform.position - transform.position).normalized * speed);
         //enemyRb.AddForce(lookDirection * speed * Time.deltaTime); dodaæ Time.deltaTime aby spowolniæ prêdkoœæ odbicia

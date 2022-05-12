@@ -55,7 +55,7 @@ public class SpawnManager : MonoBehaviour
         return randomPos;
     }
 
-    void SpawnSuperPower()
+    void SpawnSuperPower() 
     {
         float spawnPosX = Random.Range(-spawnRangeX, spawnRangeX);
         float spawnPosZ = Random.Range(-spawnRangeZ, spawnRangeZ);
