@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 2.0f;
+    [SerializeField] public float speed = 2.0f; // must be public to be readed by child class zombie
     private Rigidbody enemyRb;
     private GameObject player;
 
@@ -22,6 +22,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Move();
+    }
+    public virtual void Move() //public virtual void - has to be to be readed by zombie .cs to ovveride it
+    {
         //inaczej - enemyRb.AddForce((player.transform.position - transform.position).normalized * speed);
         //enemyRb.AddForce(lookDirection * speed * Time.deltaTime); dodaæ Time.deltaTime aby spowolniæ prêdkoœæ odbicia
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
@@ -29,7 +33,7 @@ public class Enemy : MonoBehaviour
 
         if (transform.position.y < -6)
         {
-            
+
             Destroy(gameObject);
         }
     }
